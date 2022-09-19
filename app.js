@@ -1,5 +1,6 @@
 let input = document.querySelector('#input')
 let addBtn = document.querySelector('#addBtn')
+let editBtn = document.querySelector('#editBtn')
 
 addBtn.onclick = () =>{
      let editId = addBtn.getAttribute("editId")
@@ -10,14 +11,14 @@ addBtn.onclick = () =>{
     }
     let data = getDataFromLocalStorage()
     if(editId === 0 || editId){
-        console.log(editId)
+        addBtn.textContent = 'Edit'
         data[editId] = {name: input.value}
          addBtn.removeAttribute("editId")
     } else{
 
         data.push({name: input.value})
     }
-
+    addBtn.textContent = 'Add'
     localStorage.setItem('data', JSON.stringify(data))
     input.value = ''
     input.focus()
@@ -27,11 +28,11 @@ addBtn.onclick = () =>{
 getDataFromLocalStorage = () =>{
     return localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : []
 }
-renderData = (data  = []) =>{
+renderData = (data) =>{
     
-    let html = data.map((data1, index) =>
-        `    
-        <li>
+    let html = data.map((data1, index) => 
+        `
+        <li class="task-item" >
             <div class="todo__name col-10 ">${data1.name}</div>
             <div class="todo_button col-2 d-flex"> 
                 <a href="#" onclick="editData(${index})" class="col-6 ">
@@ -40,18 +41,19 @@ renderData = (data  = []) =>{
                 <a href="#" onclick="deleteData(${index})" class="col-6 ">
                     <i class="fa-solid fa-trash "></i>
                 </a>
-            </div>
-            
+            </div>     
         </li>
         `
     
            
     )
-        document.querySelector('#root').innerHTML = html
+        document.querySelector('#root').innerHTML = html.join("")
+          
 }
 
 
 let data = getDataFromLocalStorage()
+
 renderData(data)
 
 deleteData = (id) =>{
@@ -61,14 +63,13 @@ deleteData = (id) =>{
     renderData(getDataFromLocalStorage())
 }
 editData = (id) =>{
+    addBtn.textContent = 'Edit'
     let data = getDataFromLocalStorage()
   
         input.value = data[id].name
         
-         addBtn.setAttribute("editId", id)
-    
+         addBtn.setAttribute("editId", id) 
     
 }
-
 
 
