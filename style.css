@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+}
+
+.todo__main h2{
+    text-align: center;
+}
+
+.todo__input{
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+#input{
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    width: 100%;
+   
+}
+textarea {
+    resize: none;
+}
+#addBtn{
+    height: 60px;
+    font-weight: bold;
+    width: 60px;
+    margin-left: 20px;
+}
+#addBtn:hover{
+    color: #f1f1f1;
+    background-color: #000;
+
+}
+
+#root{
+    font-size: 18px;
+    text-decoration: none;
+    list-style-type: none;
+}
+#root li{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+#root li::after{
+    display: none;
+}
+#root li a {
+    text-decoration: none;
+    padding: 6px 6px;
+    /* background-color: #f1f1f1; */
+    color: #000;
+    margin-right: 20px;
+    width: 10%;
+}
+.todo__name{
+    width: 80%;
+    background-color: #f1f1f1;
+    padding: 6px 10px ;
+    margin-right: 40px;
+}
+.fa-trash{
+    color: red;
+   
+}
+.fa-pen{
+    color: green;
+}
