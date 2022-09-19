@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    padding: 0;
 }
 
 .todo__main h2{
@@ -16,7 +17,8 @@
     height: 60px;
     line-height: 60px;
     font-size: 18px;
-    width: 100%;
+    /* width: 100%; */
+    padding: 10px 20px;
    
 }
 textarea {
@@ -25,8 +27,8 @@ textarea {
 #addBtn{
     height: 60px;
     font-weight: bold;
-    width: 60px;
-    margin-left: 20px;
+    /* width: 60px; */
+    /* margin-left: 20px; */
 }
 #addBtn:hover{
     color: #f1f1f1;
@@ -52,14 +54,15 @@ textarea {
     padding: 6px 6px;
     /* background-color: #f1f1f1; */
     color: #000;
-    margin-right: 20px;
-    width: 10%;
+    /* margin-right: 20px; */
+    /* width: 10%; */
 }
 .todo__name{
-    width: 80%;
+    /* width: 80%; */
     background-color: #f1f1f1;
     padding: 6px 10px ;
-    margin-right: 40px;
+    overflow: hidden;
+    /* margin-right: 40px; */
 }
 .fa-trash{
     color: red;
@@ -67,4 +70,54 @@ textarea {
 }
 .fa-pen{
     color: green;
+}
+.todo_button{
+    text-align: center;
+}
+ul{
+    padding-left: 1rem !important;
+}
+.hover-animate {
+    transition: all 0.2s ease-in-out;
+}
+.fa-pen {
+    opacity: 0.6;
+}
+.fa-trash{
+    opacity: 0.6;
+}
+
+.fa-pen:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+.fa-trash:hover{
+    opacity: 1;
+    transition: 0.3s; 
+}
+
+
+/* responsive */
+
+@media only screen and (width < 500px) {
+    #input {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        /* width: 100%; */
+        padding: 8px 10px;
+    }
+    #addBtn {
+        height: 40px;
+        /* font-weight: bold; */
+        /* width: 60px; */
+        /* margin-left: 20px; */
+    }
+    ul{
+        padding-left: 0 !important;
+    }
+    .todo__input{
+        margin-left: 0 !important;
+    }
+    
 }

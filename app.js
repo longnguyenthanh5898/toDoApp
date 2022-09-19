@@ -32,13 +32,13 @@ renderData = (data  = []) =>{
     let html = data.map((data1, index) =>
         `    
         <li>
-            <div class="todo__name">${data1.name}</div>
-            <div class="todo_button"> 
-                <a href="#" onclick="editData(${index})">
-                    <i class="fa-sharp fa-solid fa-pen"></i>
+            <div class="todo__name col-10 ">${data1.name}</div>
+            <div class="todo_button col-2 d-flex"> 
+                <a href="#" onclick="editData(${index})" class="col-6 ">
+                    <i class="fa-sharp fa-solid fa-pen "></i>
                 </a>
-                <a href="#" onclick="deleteData(${index})">
-                    <i class="fa-solid fa-trash"></i>
+                <a href="#" onclick="deleteData(${index})" class="col-6 ">
+                    <i class="fa-solid fa-trash "></i>
                 </a>
             </div>
             
