@@ -72,4 +72,9 @@ editData = (id) =>{
     
 }
 
-
+input.addEventListener('keypress', (e) =>{
+    if(e.key === 'Enter'){
+        e.preventDefault()      
+        addBtn.click()
+    }
+});
