@@ -12,6 +12,7 @@ addBtn.onclick = () =>{
     let data = getDataFromLocalStorage()
     if(editId === 0 || editId){
         addBtn.textContent = 'Edit'
+        input.focus()
         data[editId] = {name: input.value}
          addBtn.removeAttribute("editId")
     } else{
